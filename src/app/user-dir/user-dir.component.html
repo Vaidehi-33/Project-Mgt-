@@ -1,0 +1,96 @@
+<app-side-nav></app-side-nav>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <div class="header">
+            <p style="color:#ffffff; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600;">{{translations?.user_directory}}</p>
+            <!-- <span>
+                <select style="margin-right: 140px; border-color: var(--primary-color); border-width: 2px;" #selectLang (change)="switchLang(selectLang.value)" >
+                    <option  *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang"> {{lang}}</option>
+                </select>
+            </span> -->
+            <!-- <button (click)="toggleDarkMode()">Toggle Dark Mode</button> -->
+            <div class="search-bar">
+                <input type="text" placeholder="{{translations?.search_user}}" class="search-bar-input" [(ngModel)]="searchText">
+                <div class="search-bar-icon"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></div>
+
+
+                <!-- <input type="text" placeholder="Search User" class="search-bar-input" #searchInput>
+                 -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="add-user" (click)="openform()"> <i class="fa-solid fa-plus"></i> {{translations?.add_user}}</div>
+    <div  class="form-div">
+       
+        <form  id="myform" #userForm="ngForm"  style="display: none;" [formGroup]="userform" >
+            <header>{{translations?.user_details}}</header>
+            <!-- <label for="Id">Id:</label>
+            <input type="number" [(ngModel)]="uid"  name="uid" placeholder="Enter the Id" formControlName="uid">
+            <br>
+            <div *ngIf="userform.controls.uid.invalid && userform.controls.uid.touched" style="color: red;">id is
+                required</div> -->
+            <label for="name">{{translations?.name}}:</label>
+            <input type="text" [(ngModel)]="uname"  name="uname" formControlName="uname" placeholder='{{translations?.enter_the_name}}'>
+            <br>
+            <div *ngIf="userform.controls.uname.invalid && userform.controls.uname.touched" style="color: red;">
+            {{translations?.name_is_required}}</div>
+            <label for="email">{{translations?.email}}:</label>
+            <input type="text" [(ngModel)]="uemail"   name="uemail" formControlName="uemail" placeholder='{{translations?.enter_the_email}}'>
+            <br>
+            <div
+                *ngIf="userform.controls.uemail.invalid && userform.controls.uemail.touched && userform.controls.uemail.errors">
+                <div *ngIf="userform.controls.uemail.errors['required'] " style="color: red;">{{translations?.email_is_required}}</div>
+                <div *ngIf="userform.controls.uemail.errors['email']" style="color: red;">{{translations?.invalid_email}}</div>
+            </div>
+            <label for="role">{{translations?.role}}:</label>
+            <input type="text" [(ngModel)]="urole"  name="urole" formControlName="urole" placeholder='{{translations?.enter_the_role}}'>
+            <br>
+            <div *ngIf="userform.controls.urole.invalid && userform.controls.urole.touched" style="color: red;">
+                {{translations?.role_is_required}}</div>
+            <label for="phone">{{translations?.phone}}:</label>
+            <input type="text" [(ngModel)]="uphone"  name="uphone" formControlName="uphone" placeholder='{{translations?.enter_the_phone}}'>
+            <br>
+            <div *ngIf="userform.controls.uphone.invalid && userform.controls.uphone.touched" style="color: red;">
+                {{translations?.phone_is_required}}</div>
+            <label for="address">{{translations?.address}}:</label>
+            <textarea style="width:max-content;" name="uaddress" id="" cols="67" rows="5" [(ngModel)]="uaddress" formControlName="uaddress" placeholder='{{translations?.enter_the_address}}'></textarea>
+            <br>
+            <div *ngIf="userform.controls.uaddress.invalid && userform.controls.uaddress.touched" style="color: red;">
+                {{translations?.address_is_required}}</div>
+            <label for="photo">{{translations?.photo}}:</label>
+            <input type="file" (change)="onFileSelected($event)" name="photo" class="ph">
+     
+            <br>
+            <button  [disabled]="!userform.valid" class="btn" style="background-color: var(--primary-color);" (click)="saveUserFormData(userForm.value)">{{translations?.add}} </button>   
+
+
+        <button style="background-color: var(--secondary-color);" class="close" (click)="close()">{{translations?.close}}</button>
+            <!-- <button class="close" (click)="closeform()">Add user</button> -->
+            <!-- <button class="close" (click)="closeform()"</button> -->
+        </form>
+    </div>
+
+   <div>
+   </div>
+     
+            <app-user-card  [userArr]="userArr" [searchText]="searchText" (testEvent)="retrieveUsers()"></app-user-card>
+
+</body>
+
+</html>

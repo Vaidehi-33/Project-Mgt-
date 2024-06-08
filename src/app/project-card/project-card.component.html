@@ -1,0 +1,230 @@
+
+  <table class="table" >
+  
+    <thead>
+        <tr style="color: var(--primary-color); font-size: larger;font-weight: bold; height:60px">
+            <!-- <th>ID</th> -->
+            <th>{{ translations?.project_title }}</th>
+            <th class="text-center">{{ translations?.start_date }}</th>
+            <th class="text-center">{{ translations?.end_date }}</th>
+            <th class="text-center">{{ translations?.status }}</th>
+            <th class="text-center">{{ translations?.actions }}</th>
+        </tr>
+    </thead>
+    
+    
+    <tbody>
+        <tr *ngFor="let project of projectArr| searchFilter: searchText " >
+            <!-- <div *ngIf="searchText===''||project.projectDetails.pname.includes(searchText)"> -->
+                <td class="project-info" style="text-align:left">{{ project.projectDetails.pname }}</td>
+
+                <td class="start-date">{{project.projectDetails.pstartDate}}</td>
+
+                <td class="end-date">{{project.projectDetails.pendDate}}</td>
+
+                <td class="status">{{project.projectDetails.selectedStatus}}</td>
+
+                <td >
+                    <div class="picon">
+                        <i (click)="updateItem(project)" class="fa-solid fa-pen"  style="color:rgb(89, 255, 0);margin-right: 20px;" ></i>
+                        <i class="fa-solid fa-trash"  style="color: red;;margin-right: 20px;" (click)="deleteItem(project.id)" ></i>
+                        <i (click)="viewItem(project)" class="fa-solid fa-eye" style="color: blue;"></i>
+                    </div>               
+                </td>   
+            <!-- </div> -->
+                 
+        </tr> 
+    </tbody>
+    
+</table>
+
+<!-- <div class="pagination">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div> -->
+<!-- <div class="answer" id="ans" style="
+
+width: 500px;
+height: 500px;
+border-width: 5px;
+padding-left: 25px;
+ position: fixed;
+top: 50%;left: 50%;background-color: #ebe8e8 ;border: 1px solid black"; > -->
+
+
+<div *ngIf="selectedItem" class="popup">
+    <div style="border-bottom: 2px solid #ccc;">
+        <i class="fa-solid fa-xmark" style="margin-top: -40; margin-left: 580px; background-color: rgb(189, 26, 26); color: white; padding-right: 2px; padding-left: 2px; margin-top: 1px;" (click)="closeDetails()"></i>
+        <h1 style="text-align:left; margin-top: -20px; font-weight: lighter;">{{ translations?.project_details }}</h1>
+    </div> 
+    <div class="popup-content">
+        <div style="columns: 2;">
+            <p>{{ translations?.project_title }} :</p>
+            <h4 style="color:rgb(0, 0, 0);">{{ selectedItem.pname}}</h4>
+            <br>
+            <p style="display: inline;">{{ translations?.start_date }} :</p>
+            <h4 style="display: inline;">{{ selectedItem.pstartDate}}</h4>
+            <br>
+            <p style="display: inline;">{{ translations?.end_date }} :</p>
+            <h4 style="display: inline;">{{ selectedItem.pendDate }}</h4><br> <br>
+            <section>
+                <p>{{ translations?.project_status }} :</p>
+                <h4>{{ selectedItem.selectedStatus}}</h4>
+            </section>
+            <div class="accordion">
+                <br>
+                <p class="sel" id="select">{{ translations?.select_users }} :</p> 
+                <div class="usercard">
+                    <h5 style="display: list-item; margin-top: -2px;" *ngFor="let uname of selectedItem.selectUsers">{{ uname }} </h5>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>{{ translations?.description }} :</p>
+        <h4>{{ selectedItem.pdescription }}</h4>
+    </div>
+</div>
+
+<!-- <div *ngIf="selectedItem" class="popup">
+   
+
+     <div style="border-bottom: 2px solid #ccc;"> 
+    <i class="fa-solid fa-xmark" style="margin-top: -40 ;margin-left: 580px; background-color: rgb(189, 26, 26);color: white;padding-right: 2px; padding-left: 2px; margin-top: 1px; " (click)="closeDetails()"></i>
+    <h1 style="text-align:left ;margin-top: -20px;font-weight: lighter;">{{ 'Project Details' | translate }}</h1>
+</div> 
+<div  class="popup-content" >
+        
+    <div style="columns: 2;">
+        <p>{{ 'Project Title' | translate }} : </p>
+    <h4 style=" color:rgb(0, 0, 0);">{{ selectedItem.pname}}</h4>
+
+        <br>
+    <p style="display: inline;">{{ 'Start Date' | translate }} :</p>
+    <h4 style="display: inline;">{{ selectedItem.pstartDate}}</h4>
+    <br>
+    <p style="display: inline;">{{ 'End Date' | translate }} :</p>
+    <h4 style="display: inline;">{{ selectedItem.pendDate }}</h4><br> <br>
+    <section>
+        <p>{{ 'Project Status' | translate }} :</p>
+        <h4>{{selectedItem.selectedStatus}}</h4>
+    </section>
+    <div class="accordion">
+        <br>
+        <p class="sel" id="select" >Selected Users :</p> 
+        <div class="usercard">
+
+         <h5 style="display: list-item;margin-top: -2px; font-style: normal;font-weight: 520;" *ngFor="let uname of selectedItem.selectUsers">{{ uname }} </h5>
+        </div>
+    </div>
+
+</div>
+<br>
+<p >{{ 'Description' | translate }} :</p>
+    <h4>      {{ selectedItem.pdescription }}</h4>
+</div>
+</div> -->
+
+
+
+
+
+
+
+
+
+<!-- 
+    <div class="answer" id="ans" style="display: none;
+
+    width: 500px;
+    height: 500px;
+    border-width: 5px;
+    padding-left: 25px;
+     position: fixed;
+    top: 50%;left: 50%;transform: translate(-50%,-50%);background-color: #ebe8e8 ;border: 1px solid black;
+    " *ngFor="let project of projectArr" >
+
+            <i class="fa-solid fa-xmark" style="margin-top: 0 ;margin-left: 480px; background-color: rgb(189, 26, 26);color: white;padding-right: 2px; padding-left: 2px; margin-top: 2px;" (click)="closeDetails()"></i>
+            <section>
+                <h2>Project Name</h2>
+                <p style="display: block;">{{project.projectDetails.pname}}</p>
+            </section>
+            <section>
+                <h2 >Project Description</h2>
+                <p style="display: block;">{{project.projectDetails.pdescription}}</p>
+            </section>
+            
+            <section>
+                <h2>Dates:</h2>
+                <p><strong>Start Date:</strong> {{project.projectDetails.pstartDate}}</p>
+                <p><strong>End Date:</strong> {{project.projectDetails.pendDate}}</p>
+            </section>
+        
+            <section>
+                <h2>List of Users</h2>
+                <ul *ngFor="let item of accordionItems">
+                    <li>{{item}}</li>
+                </ul>
+            </section>
+        
+            <section>
+                <h2>Project Status</h2>
+                <label>
+                    <input type="radio" name="projectStatus" checked> Completed
+                </label>
+                <label>
+                    <input type="radio" name="projectStatus"> In progress
+                </label>
+            </section>
+    </div> -->
+
+    <form  id="pform" #projectForm="ngForm">
+        <header>{{ translations?.project_details }}</header>
+        <label for="name" style="display: none;">Project Id:</label >
+        <input type="text" name="id" [(ngModel)]="id" style="display: none;">
+        <label for="name">{{ translations?.project_title }}:</label>
+        <input type="text" name="name" [(ngModel)]="uname" style="width: 100%;">
+         <div style="display: inline-block; columns: 2; column-gap: 100px;">
+            <label for="stdate" >{{ translations?.start_date }}:</label>
+        <input type="date" name="stdate"  [(ngModel)]="stdate" >
+      
+        <label for="endate" >{{ translations?.end_date }}:</label>
+        <input type="date" name="endate"  [(ngModel)]="endate" >
+         </div>  
+        
+         
+        
+        <label for="des">{{translations?.description }}:</label>
+        <textarea style="width:max-content;" name="description" id="" cols="15" rows="5"style="width: 391px; height: 123px;" [(ngModel)]="des" ></textarea>
+        <br>
+        <br>
+        <label for="radbtn">{{ translations?.project_status }}</label>
+        
+        <input type="radio" name="status" id="completed"  (change)="handleRadioChange('Completed')"> {{translations?.completed}}
+        <input type="radio" name="status" id="pending"   (change)="handleRadioChange('Pending')"checked > {{translations?.pending}}
+        <br>
+        <br>
+        <div class="dropdown">
+            <button class="dropbtn" >{{translations?.select_users}}</button>
+            <div class="dropdown-content">
+                <a *ngFor="let option of unameArray" (click)="addItemToAccordion(option)">{{ option }}</a>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <br>
+            <h4 class="sel" id="select"
+                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: lighter; margin-bottom: 0;" >
+                {{translations?.select_users}} :</h4>
+            <div class="accordion-item" *ngFor="let item of newSelectArr">
+                <div style="font-weight: lighter" class="accordion-header">
+                    <h2>{{ item }} <i class="fa-solid fa-trash" (click)="deleteUser(item)" ></i></h2>
+                </div>
+
+            </div>
+        </div>
+        <button  class="bttn" style="background-color: var(--primary-color)" (click)="saveProjectFormData(projectForm.value)">{{ translations?.update}}</button>   
+        <button style="background-color: var(--secondary-color);" class="close" (click)="closeform()">{{ translations?.close }}</button>
+
+      </form>
+
+    
+      

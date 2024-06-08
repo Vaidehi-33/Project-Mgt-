@@ -1,0 +1,72 @@
+
+<div class="flex-container">
+    <!-- <div id="card" *ngFor="let user of userArr |filter:searchText"> -->
+        <div id="card" *ngFor="let user of userArr | filter: searchText : language">
+
+        <h2>{{user.userDetails.uname}} <h6 style="margin-bottom: 1px; margin-top: 2px;">{{user.userDetails.urole}}
+            </h6>
+        </h2>
+        <!-- <h3 style="margin-left: 43%;color: white;">{{userArr.userDetails.urole}}</h3> </div> -->
+        <div class="image-crop">
+            <img class="avatar" style="height: 100px; width: 150px;" src={{user.userDetails.imageUrl}} alt="User Photo">
+        </div>
+    
+        <div id="bio" >
+    
+            <div style="display: inline;" class="delta-icon"><i class="fa-solid fa-phone"
+                    style="margin-right: 20px;font-size: 20px; margin-top: -2px;"></i></div>
+            <p style="display: inline;" class="s1">{{user.userDetails.uphone}}</p>
+            <br>
+            <div style="display: inline;" class="delta-icon"><i class="fa-solid fa-location-dot"
+                    style="margin-right: 20px;font-size: 20px;"></i></div>
+            <p style="display: inline;" class="s1">{{user.userDetails.uaddress}}</p>
+            <br>
+            <div style="display: inline;" class="delta-icon"><i class="fa-solid fa-envelope"
+                    style="margin-right: 20px;font-size: 20px;"></i></div>
+            <p style="display: inline;" class="s1">{{user.userDetails.uemail}}</p>
+            <div>
+                <button class="addbtn" style="background: var(--primary-color);" (click)="editUser(user)">{{translations?.edit}}</button>
+                <button class="closebtn" style="background-color:var(--secondary-color);"
+                    (click)="deleteUser(user.id)">{{translations?.delete}}</button>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+</div>
+
+
+<form  id="uform" #userForm="ngForm"  style="display: none;" >
+    <header style="margin-left: 180px;">{{translations?.user_details}}</header>
+   
+    <label for="name">{{translations?.name}}:</label>
+    <input type="text"   name="uname"  [(ngModel)]="uname">
+    <br>
+    
+    <label for="email">{{translations?.email}}:</label>
+    <input type="text"    name="uemail"  [(ngModel)]="uemail">
+    <br>
+    
+    <label for="role">{{translations?.role}}:</label>
+    <input type="text"  name="urole"  [(ngModel)]="urole">
+    <br>
+    
+    <label for="phone">{{translations?.phone}}:</label>
+    <input type="text"  name="uphone"  [(ngModel)]="uphone">
+    <br>
+    
+    <label for="address">{{translations?.address}}:</label>
+    <textarea style="width:max-content;" name="uaddress" id="" cols="55" rows="5"  [(ngModel)]="uaddress"></textarea>
+    <br>
+    
+    <!-- <label for="photo">Photo:</label>
+    <input type="file"  name="photo" class="ph"> -->
+
+    <br>
+    <button type="button"  class="btn" style="background-color: var(--primary-color);" (click)="updateUserData(userForm.value)">{{translations?.update}}</button>
+
+
+<button style="background-color: var(--secondary-color);" class="close" (click)="closeform()">{{translations?.close}}</button>
+    
+</form>

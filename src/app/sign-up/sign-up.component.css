@@ -1,0 +1,443 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.light {
+  --mainColor: var(--primary-color);
+  --hoverColor: var(--secondary-color);
+  --backgroundColor: #faf8f8;
+  --lightOne: #919191;
+  --lightTwo: #aaa;
+}
+
+*{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  html, body * { box-sizing: border-box; font-family: 'Open Sans', sans-serif; }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+    background:
+    linear-gradient(
+    rgba(246,247,249,0.8),
+    rgba(246,247,249,0.8)),
+    url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/sky-clouds-cloudy-mountain.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.big-wrapper {
+  position: relative;
+  padding: 1.7rem 0 2rem;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--backgroundColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  position: relative;
+  max-width: 81rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  z-index: 10;
+}
+
+header {
+  position: relative;
+  z-index: 70;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 100px;
+  margin-right: 0.6rem;
+  margin-top: -0.6rem;
+}
+
+.logo h3 {
+  color: var(--darkTwo);
+  font-size: 1.55rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.links ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.9rem;
+  color: #fff !important;
+  background-color: var(--mainColor);
+  border-radius: 16px;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--hoverColor);
+  transform: scale(1) !important;
+}
+.showcase-area .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.big-title {
+  font-size: 1.4rem;
+  color: var(--darkOne);
+  text-transform: capitalize;
+  line-height: 1.4;
+}
+
+.text {
+  color: var(--lightOne);
+  font-size: 1.1rem;
+  margin: 1.9rem 0 2.5rem;
+  max-width: 600px;
+  line-height: 2.3;
+}
+
+.showcase-area .btn {
+  box-shadow: 0 0 40px 2px rgba(0, 0, 0, 0.05);
+}
+
+.person {
+  width: 90%;
+  transform: translate(15%, 25px);
+  margin-left: 200px;
+  margin-top: -1000px;
+}
+
+
+.shape {
+  position: absolute;
+  z-index: 0;
+  width: 500px;
+  bottom: -180px;
+  left: -15px;
+  opacity: 0.35;
+}
+
+.sigin{
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  color: rgba(255,255,255,.7);
+  display: block;
+}
+
+.adjust{
+  padding-left: 110px;
+  padding-right: 110px;
+}
+
+
+/* 
+*{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+}
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color:#b5bcd5;
+    border: 2px solid var(--primary-color);
+  }
+  
+
+  .card {
+    padding: 20px;
+    background-color: #ffffff; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #000;
+    height: 480px;
+    width: 420px;
+    box-shadow: 20px;
+    opacity: 100;
+    animation: fadeIn 0.5s ease-in-out;
+    
+  }
+  
+  .form-label {
+    font-weight: bold;
+    color: #333; 
+    margin-left: 26px;
+    margin-top: 280px;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #c0bebe;
+    margin-top: 30px;
+    width:350px; 
+    height: 29px;
+    margin-left: 26px;
+  }
+
+  .input-group-btn {
+    position: relative;
+    top: -1px;
+  }
+
+  .btn-success {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    width: 150px;
+    height:50px;
+    margin-left: 140px;
+    margin-top: 50px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom : 10px;
+
+  }
+  .btn-success[disabled] {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  .btn-success:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .spinner-border {
+    margin-right: 5px;
+  }
+
+  .row {
+    margin-bottom: 15px;
+  }
+ 
+  @media (max-width: 576px) {
+    .box {
+      height: 576px;
+    }
+  }
+   */
+
+  
+  .box {
+    margin-top: -1000px;
+    height: 575px;
+    width: 430px;
+    background:
+      linear-gradient(
+      rgba(35,43,85,0.75),
+      rgba(35,43,85,0.95)),
+      url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: solid 1px rgba(255,255,255,.5);
+    border-radius: 5px;
+    box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: all .5s ease;
+     display: flex;
+      justify-content: center;
+      align-items: center;
+       /* height: 100vh; 
+      background-color:#d3d7e6;
+      /* opacity:0.3; */
+      border: 2px solid var(--primary-color); 
+    }
+  
+    .box-long {
+      height: 615px;
+    }
+    
+    .box-short {
+      height: 400px;
+      margin-top: 50px;
+      box-shadow: 0px 2px 7px rgba(0,0,0,0.1);
+    }
+
+    /* .outer-area {
+      background-color:var(--primary-color);
+      border-radius: 10px; 
+    } */
+
+    .card {
+      padding-bottom: 10px;
+      color: #ffffff;
+      text-decoration: none;
+      transition: all .25s ease;
+      cursor: pointer;
+      animation: fadeIn 0.5s ease-in-out; 
+  
+      
+      /* padding: 20px;
+      background-color: #ffffff; 
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border: 2px solid #000;
+      height: 480px;
+      width: 420px;
+      box-shadow: 20px;
+      opacity: 100;
+      animation: fadeIn 0.5s ease-in-out; */
+  
+      
+    }
+    
+    .form-label {
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 13px;
+      padding-left: 15px;
+      padding-bottom: 10px;
+      color: rgba(255,255,255,.7);
+      display: block;
+    }
+    
+    .form-control {
+      width: 100%;
+      height: 35px;
+      padding-left: 15px;
+      margin-left: 0px;
+      border: none;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      background: rgba(255,255,255,.2);
+    }
+  
+    .input-group-btn {
+      position: relative;
+      top: -1px;
+ 
+    }
+  
+    h1{
+      color: #ffffff;
+      /* text-decoration: none; */
+      border-bottom: solid 2px #1059FF;
+      transition: all .25s ease;
+      cursor: pointer;
+      text-transform: uppercase;
+      padding-left: 17px;
+      /* display: inline;
+      text-align: left;
+     
+      padding-right: 10px; */
+    }
+
+    .btn-success {
+      float: left;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      width: 100%;
+      height: 35px;
+      border: none;
+      border-radius: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 13px;
+        text-align: center;
+        color: rgba(255,255,255, 1);
+        margin-top: 40px;
+        background-color: rgb(90, 140, 255);
+        left: 0px;
+        top: 0px;
+        transition: all .5s ease, top .5s ease .5s, height .5s ease .5s, background-color .5s ease .75s; 
+    }
+
+    .btn-success[disabled] {
+      animation: shake 0.5s ease-in-out;
+    }
+
+    /* .btn-success-animate-grow {
+      width: 130%;
+      height: 625px;
+      position: relative;
+      left: -55px;
+      top: -420px;
+      color: rgba(255,255,255,0);
+      background-color: rgba(255,255,255,1);
+    } */
+    
+    .btn-success-hover {
+        cursor: pointer; 
+        background-color: #0F4FE6;
+        transition: background-color .5s; 
+    }
+    
+    .spinner-border {
+      margin-right: 5px;
+    }
+  
+    .row {
+      margin-bottom: 15px;
+    }
+   
+    @media (max-width: 576px) {
+      .box {
+        height: 576px;
+      }
+    }
+    

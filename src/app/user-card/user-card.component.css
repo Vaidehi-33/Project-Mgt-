@@ -1,0 +1,530 @@
+#card {
+	/* background-color: #a0a4b5 ; */
+  /* background-color: #988c89 ; */
+  background-color: #dfe2e6;
+	height: auto;
+	width: 300px;
+	margin: 7vh auto;
+	border-radius: 25px;
+	padding-bottom: 10px;
+	box-shadow: 8px 1px 10px;
+  margin-right: 35px;
+  margin-left: 35px;
+}
+
+h2 {
+	color: white;
+	text-align: center;
+	width: 100%;
+	background-color: #4c547a;
+	border-radius: 25px 25px 0 0;
+	color: #ffffff;
+	padding: 10px 0;
+	font-weight: 700;
+	margin: 0;
+}
+.image-crop {
+  display: block;
+  position: relative;
+  background-color: #E6EBEE;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px #4069E2;
+  transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.image-crop:hover {
+  transform: scale(2); 
+}
+
+.avatar {
+  display: inline;
+  width: 100%; 
+  height: auto; 
+  margin-left: -24px;
+}
+
+#bio {
+	/* display: block; */
+  margin-top: -10px;
+	margin: 2px auto;
+	width: 280px;
+	height: auto;
+  color: rgb(0, 0, 0);
+}
+
+#bio p {
+	color: #000000;
+	font-weight: light;
+	font-size: 15px;
+	text-align: justify;
+}
+
+#stats {
+	display: flex;
+	flex-direction: row;
+	height: auto;
+	width: 280px;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	font-weight: 500;
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+}
+
+.stat {
+	font-size: 25px;
+	margin: 0;
+}
+
+.label {
+	margin: 0;
+}
+
+.addbtn , .closebtn {
+  /* gap: 10px; */
+	display: inline-block;
+	position: relative;
+	padding: 10px;
+	width: 100px;
+  height: 35px;
+	margin-right: 40px;
+  /* margin-left: 30px; */
+	border: black solid;
+  border-width: 0.5px ;
+	font-weight: 500;
+	color: #E6EBEE;
+  transform: translate(18%, 12%);
+  margin-bottom: 10px;
+  margin-top: 1px;
+
+}
+
+#buttons {
+	display: flex;
+	margin: 0 auto;
+	justify-content: space-between;
+	width: 280px;
+}
+
+.delta-icon{
+  width: 1px;
+  height:1px;
+  font-size: 0.1rem;
+  margin-top: 0px;
+  padding: 2px;
+}
+
+/* .delta{
+  display: flex;
+  height: 0px;
+
+} */
+/* .delta-icon{
+  width: 1px;
+  height:1px;
+  font-size: 0.5rem;
+  margin: 0px;
+  padding: 2px;
+} */
+/* .delta p{
+  text-align: center;
+  margin: 10px;
+  padding: 4px;
+  width: 190px;
+} */
+
+
+/* #buttons {
+	display: flex;
+	margin: 0 auto;
+	justify-content: space-between;
+	width: 280px;
+}
+
+button {
+	display: block;
+	position: relative;
+	padding: 10px 0;
+	width: 130px;
+	margin: 30px 0;
+	border-radius: 25px;
+	border: none;
+	font-size: 20px;
+	letter-spacing: 0.2px;
+	font-weight: 500;
+	background-color: #4069E2;
+	color: #E6EBEE;
+}
+
+button:focus {
+	display: none;
+} */
+
+/* #msg{
+	background-color: #E6EBEE;
+	color: #393B45;
+} */
+
+
+/* 
+
+
+.user{ 
+    padding: 15px;
+    background-color:  #f0f0f0;
+    width: 300px;
+    height: 228px;
+    display: flex;
+    border-radius: 7px;
+    flex-direction: column;
+    box-shadow: 1px 8px 20px ;
+   
+  }    
+  .userinfo{
+    display: flex;
+    
+  }
+  .img{
+    background-color: rgb(255, 255, 255);
+    width: 85px;
+    height: 85px;
+    border-radius: 42px;
+  }
+  .un{
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    height: 65px;
+    width: 185px;
+    flex-direction: column;
+    padding: 5px;
+    margin: 8px;
+    border-radius: 13px;
+
+  }
+  
+
+  
+  .details{
+    
+    padding: 0px;
+    margin: 10px;
+    width: 275px;
+    height: 129px;
+  }
+  .delta{
+    display: flex;
+    height: 40px;
+  
+  }
+  .delta-icon{
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    margin: 2px;
+    padding: 2px;
+  }
+  .delta p{
+    text-align: center;
+    margin: 10px;
+    padding: 4px;
+    width: 190px;
+  }
+  
+  .s1{
+    width: 250px;
+    height: 20px;
+  }
+  
+  table{
+    width: 275px;
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+  tr{
+    border: 1px solid black;
+  
+  }
+  td{
+  
+    border: 1px solid black;
+  
+  }
+ 
+  .user{
+    margin: 1rem;
+  }
+  
+  #myform{
+    display: none;
+  } */
+  
+/* .user {
+  padding: 15px;
+  background-color: #f0f0f0;
+  width: 308px;
+  height: 310px;
+  display: flex;
+  border-radius: 7px;
+  flex-direction: column;
+  box-shadow: 1px 8px 20px;
+}
+
+.userinfo {
+  display: flex;
+}
+
+.img {
+  background-color: rgb(255, 255, 255);
+  width: 85px;
+  height: 85px;
+  border-radius: 50%; 
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.img img {
+  max-height: 100%;
+}
+
+.un {
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  height: 65px;
+  width: 185px;
+  flex-direction: column;
+  padding: 5px;
+  margin: 8px;
+  border-radius: 13px;
+}
+
+.uns {
+  margin: 3px;
+}
+
+.details {
+  padding: 0px;
+  margin: 10px;
+  width: 275px;
+  height: 129px;
+} */
+
+.delta {
+  display: flex;
+  /* flex-wrap: wrap; */
+  height: 40px;
+}
+
+.delta-icon {
+  width: 35px;
+  height: 35px;
+  font-size: 2rem;
+  margin: 2px;
+  padding: 2px;
+}
+
+.delta p {
+  text-align: center;
+  margin: 10px;
+  padding: 4px;
+  width: 190px;
+}
+
+.s1 {
+  width: 250px;
+  height: 20px;
+}
+
+table {
+  margin-left: -7px;
+  width: 300px;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+tr {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+}
+
+.user {
+  margin: 1rem;
+}
+
+#myform {
+  display: none;
+}
+.remove-symbol {
+  position: relative;
+  height: 1rem;
+  width: 1rem;
+  background-color: red;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #ff0000; /* Change the color of the remove symbol as desired */
+}
+
+.remove-symbol i {
+  font-size: 1.5rem; /* Adjust the font size of the remove symbol */
+}
+button,
+.close {
+  margin-top: 2px;
+  width: 100%; /* 50% width with a small gap between buttons */
+  box-sizing: border-box;
+  background-color: #7596d3; /* Use the desired background color */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: inline-block; /* Display as inline-block to make them side by side */
+}
+
+.close {
+  background-color: #6C757D; /* Use the desired background color for the close button */
+  /* margin-left: 10px;  */
+}
+.close {
+  display: flex;
+  width: 100%; 
+  margin-left: 0;
+}
+
+/* button:hover{
+  transform: scale(0.8);
+  transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+} */
+
+form {
+
+  /* display: none; */
+  width: 30%;
+  /* height: 40%; */
+ margin: 20px auto;
+ padding: 20px;
+ border: 1px solid #ccc;
+ justify-content: center;
+ border-radius: 5px;
+ box-shadow: 1px 8px 20px;
+ position: fixed;
+ background-color: white;
+ z-index: 10; /* Adjust z-index as needed */
+ left: 48%;
+ top: 46%;
+ transform: translate(-40%, -40%);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+textarea{
+  width: 50%;
+  padding:  5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  outline:none;
+  border-radius: 10px;
+  color:black;
+}
+input {
+  width: 100%;
+  padding:  5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  outline:none;
+  border-radius: 10px;
+  color:black;
+}
+
+button,
+.close {
+  margin-top: 2px;
+  width: 100%; /* 50% width with a small gap between buttons */
+  box-sizing: border-box;
+  background-color: #4681f4; /* Use the desired background color */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: inline-block; /* Display as inline-block to make them side by side */
+}
+
+.close {
+  background-color: #6C757D; /* Use the desired background color for the close button */
+  /* margin-left: 10px;  */
+}
+@media (max-width: 1230px) {
+  form {
+      width: 50%;
+      top: 57%;
+  }
+  label{
+    margin-top: -4px;
+  }
+ header{
+  margin-top: -14px;
+ }
+ /* .main-container{
+  width: 102%;
+  margin-left: -1%;
+ } */
+ }
+ 
+  @media (max-width: 770px) {
+    form {
+        width: 50%;
+        left: 42%;
+        top: 370px;
+    }
+    .sidenav-nav{
+      height: 0px;
+    }
+    label{
+      margin-top: -10px;
+    }
+  header{
+    margin-top: -14px;
+    
+  }
+  }
+  .flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+   
+  }

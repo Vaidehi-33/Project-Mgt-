@@ -1,0 +1,82 @@
+<app-side-nav> </app-side-nav>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ translations?.document_title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="header">
+            <p style="color:#ffffff; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600;">
+                {{ translations?.project_directory }}</p>
+            <!-- <select #languageSelect (change)="switchLanguage(languageSelect.value)">
+                <option *ngFor="let lang of languages" [value]="lang.code">{{ lang.name | translate }}</option>
+            </select> -->
+              
+            <div class="search-bar">
+                <input type="text" placeholder="{{ translations?.search_project }}" class="search-bar-input" [(ngModel)]="searchText">
+                <div class="search-bar-icon"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="add-project" (click)="openform()"><i class="fa-solid fa-plus"></i> {{ translations?.create_project }}</div>
+    <form id="myform" #projectForm="ngForm" [formGroup]="projectform">
+        <header>{{ translations?.project_details }}</header>
+        <label for="pname">{{ translations?.project_title }}:</label>
+        <input type="text" [(ngModel)]="pname" name="pname" placeholder="{{ translations?.enter_title }}" formControlName="pname">
+        <br>
+        <div *ngIf="projectform.controls.pname.invalid && projectform.controls.pname.touched"
+            style="color: red;">{{ translations?.name_required }}</div>
+        <label for="pdescription">{{ translations?.description }}:</label>
+        <textarea style="width:max-content;" name="pdescription" id="" cols="67" rows="5" [(ngModel)]="pdescription" formControlName="pdescription" placeholder="{{ translations?.enter_the_description }}"></textarea>
+        <br>
+        <div style="display: inline-block; columns: 2; column-gap: 100px;">
+            <label for="pstartDate">{{ translations?.start_date }}:</label>
+            <input type="date" [(ngModel)]="pstartDate" name="pstartDate" formControlName="pstartDate">
+            <br>
+            <div *ngIf="projectform.controls.pstartDate.invalid && projectform.controls.pstartDate.touched"
+                style="color: red;">{{ translations?.start_is_required }}</div>
+            <label for="pendDate">{{ translations?.end_date }}:</label>
+            <input type="date" [(ngModel)]="pendDate" name="pendDate" formControlName="pendDate">
+        </div>
+        <br>
+        <div class="dropdown">
+            <button class="dropbtn">{{ 'select_users' | translate }}</button>
+            <div class="dropdown-content">
+                <a *ngFor="let option of unameArray" (click)="addItemToAccordion(option)">{{ option }}</a>
+            </div>
+        </div>
+<div class="dropdown-content">
+    <a *ngFor="let option of unameArray | keyvalue" (click)="addItemToAccordion(option.value)">{{ option.key }}</a>
+</div>
+
+        <div class="accordion">
+            <br>
+            <h4 class="sel" id="select"
+                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: lighter;">
+                {{ translations?.select_users }} :</h4>
+            <div class="accordion-item" *ngFor="let item of accordionItems">
+                <div class="accordion-header">
+                    <p style="font-size:15px; margin-bottom: 12px;">{{ item }}</p>
+                </div>
+            </div>
+        </div>
+
+        <button [disabled]="!projectform.valid" class="btn" style="background-color: var(--primary-color)" (click)="saveProjectFormData(projectForm.value)">{{ translations?.add }}</button>
+        <button style="background-color: var(--secondary-color);" class="close" (click)="close()">{{ translations?.close }}</button>
+
+    </form>
+    <div class="flex-container">
+        <app-project-card [projectArr]="projectArr" [searchText]="searchText" (testEvent)="retrieveProjects()"></app-project-card>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://path/to/transcription-service/script.js"></script>
+
+  </head>
+  <body>
+    <main>
+      <div class="big-wrapper light">
+        <img src="assets/shape1.png" alt="" class="shape" />
+
+        <header>
+          <div class="container">
+            <div class="logo">
+              <img src="assets/logo1.png" alt="Logo" />
+            </div>
+            <!-- <select #languageSelect (change)="switchLanguage(languageSelect.value)">
+              <option *ngFor="let lang of languages" [value]="lang.code">{{ lang.name  }}</option>
+          </select> -->
+          <span class="select-lang-container">
+            <select #selectLang (change)="switchLanguage(selectLang.value)">
+              <option
+                *ngFor="let lang of languages"
+                [value]="lang.code"
+                [selected]="lang.code === CurrentLanguage()"
+              >
+                {{ lang.name }}
+              </option>
+            </select>
+          </span>
+            <div class="links">
+              <ul>
+                <li><a (click)="SignUp()" class="btn">{{translations?.sign_up}}</a></li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        <div class="showcase-area">
+          <div class="container">
+            <div class="left">
+              <div class="big-title">
+                <h1>{{translations?.future_is_here}},</h1>
+                <h1>{{translations?.start_exploring_now}}.</h1>
+              </div>
+              <p class="text">
+                {{translations?.data}}
+              </p>
+              <div class="cta">
+                <a (click)="SignIn()" class="btn">{{translations?.get_started}}</a>
+              </div>
+            </div>
+            <div class="right">
+              <img src="assets/person1.jpg" alt="Person Image" class="person" />
+            </div>
+          </div>
+        </div>   
+      </div>
+    </main>    
+  </body>
+</html>

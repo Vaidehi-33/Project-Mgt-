@@ -1,0 +1,25 @@
+<div class="sidenav">
+    <div class="logo-container">
+        <img src="assets/logo1.png"  class="logo">
+        
+    </div>
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a href="" class="sidenav-nav-link" [routerLink]="[data.routeLink]"
+            routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <i class="sidenav-link-icon" [class]="data.icon"></i>
+                
+            </a>
+            
+        </li>
+        <div [ngClass]="{'dark-mode': sid.isDarkMode}">
+        <label class="switch">
+            <input type="checkbox" (click)="toggleDarkMode()" [checked]="sid.isDarkMode" /> 
+            <span class="slider"></span>
+            <p style="margin-left: 5px;color: white;">{{translations?.theme}}</p>
+          </label>
+        </div>
+        
+        <i id="switch"  class = "fas fa-power-off" (click)="Navigation()"></i>
+    </ul>
+</div>

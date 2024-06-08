@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <main>
+      <div class="big-wrapper light">
+        <img src="assets/shape1.png" alt="" class="shape" />
+
+        <header>
+          <div class="container">
+            <div class="logo">
+              <img src="assets/logo1.png" alt="Logo" />
+            </div>
+
+            <!-- <div class="links">
+              <ul>
+                <li><a href="signUp" class="btn">Sign up</a></li>
+              </ul>
+            </div> -->
+          </div>
+        </header>
+
+        <div class="showcase-area">
+          <div class="container">
+            <div class="left">
+              <!-- <div class="big-title">
+                <h1>Future is here,</h1>
+                <h1>Start Exploring now.</h1>
+              </div> -->
+              <!-- <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Delectus eius distinctio odit, magni magnam qui ex perferendis
+                vitae!
+              </p> -->
+              <!-- <div class="cta">
+                <a href="signIn" class="btn">Get started</a>
+              </div> -->
+            </div>
+            <div class="right">
+              <img src="assets/person1.jpg" alt="Person Image" class="person" />
+            </div>
+          </div>
+        </div>   
+ 
+
+
+
+
+<div class="box">
+  <div class="outer-area">
+<div class="row justify-content-center my-5">
+    <div class="col-4">
+      <div class="card">
+        <div style="font-size: large;" class="card-body" *ngIf="!isConfirm">
+          <h1 style=" margin-top: -40px; margin-bottom: 50px; padding-left: 18px;">{{translations?.sign_up}}</h1>
+
+          <div class="row">
+            <div class="col mb-2">
+              <label for="email" class="form-label">{{translations?.email}}</label>
+              <div>
+              <input type="email" id="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control form-control-sm">
+            </div>
+          </div>
+
+          </div>
+          <div class="row">
+            <div class="col mb-2">
+              <label for="password" class="form-label">{{translations?.password}}</label>
+              <div class="input-group input-group-sm">
+                <input [type]="user.showPassword ? 'text' : 'password'" id="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control form-control-sm">
+                  <i class="bi" [ngClass]="{'bi-eye-fill': !user.showPassword, 'bi-eye-slash-fill': user.showPassword}"></i>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="sigin" >
+              <label >Already have a account? <a (click)="DoSignIn()">SignIn</a></label>
+            </div>
+            <div class="col d-grid">
+              <button type="button" (click)="signUp()" class="btn btn-sm btn-success" [disabled]="loading">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+                {{translations?.sign_up}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="adjust" style="padding-left: 120px; padding-right: 120px;">
+        <div class="card-body" *ngIf="isConfirm">
+          <div class="row">
+            <div class="col mb-2">
+              <label for="code" class="form-label">Code:</label>
+              <input type="text" id="code" name="code" #code="ngModel" [(ngModel)]="user.code" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-grid">
+              <button type="button" (click)="confirmSignUp()" class="btn btn-sm btn-success" [disabled]="loading">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</main>    
+</body>
+</html>

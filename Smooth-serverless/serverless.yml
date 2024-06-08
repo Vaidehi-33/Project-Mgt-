@@ -1,0 +1,198 @@
+service: Smooth-serverless
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ca-central-1
+ 
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+
+          Action:
+             - "dynamodb:PutItem"
+             - "dynamodb:Get*"
+             - "dynamodb:Scan*"
+             - "dynamodb:UpdateItem"
+             - "dynamodb:DeleteItem"
+          Resource: 
+            - "arn:aws:dynamodb:ca-central-1:839728096237:table/smooth-operators-project-table"
+            - "arn:aws:dynamodb:ca-central-1:839728096237:table/smooth-operators-user-table"  
+  httpApi:
+    cors: true
+
+
+functions:
+
+#PROJECT
+
+  so-postProjects:
+    handler: Lambdas/project-post.handler
+    events:
+      - httpApi:
+          path: /projectDir
+          method: post
+    environment:
+      Table_Name: smooth-operators-project-table
+
+  so-getProjects:
+    handler: Lambdas/project-get.handler
+    events:
+      - httpApi:
+          path: /projectDir
+          method: get
+    environment:
+      Table_Name: smooth-operators-project-table
+
+  so-delProjects:
+    handler: Lambdas/project-del.handler
+    events:
+      - httpApi:
+          path: /projectDir
+          method: delete
+    environment:
+      Table_Name: smooth-operators-project-table
+
+  so-updateProjects:
+    handler: Lambdas/project-update.handler
+    events:
+      - httpApi:
+          path: /projectDir
+          method: put
+    environment:
+      Table_Name: smooth-operators-project-table
+
+#USER
+
+  so-postUsers:
+    handler: Lambdas/user-post.handler
+    events:
+      - httpApi:
+          path: /userDir
+          method: post
+    environment:
+      Table_Name: smooth-operators-user-table
+
+  so-getUsers:
+    handler: Lambdas/user-get.handler
+    events:
+      - httpApi:
+          path: /userDir
+          method: get
+    environment:
+      Table_Name: smooth-operators-user-table
+
+  so-delUsers:
+    handler: Lambdas/user-del.handler
+    events:
+      - httpApi:
+          path: /userDir
+          method: delete
+    environment:
+      Table_Name: smooth-operators-user-table
+
+  so-updateUsers:
+    handler: Lambdas/user-update.handler
+    events:
+      - httpApi:
+          path: /userDir
+          method: put
+    environment:
+      Table_Name: smooth-operators-user-table
+
+
+
+
+
+
+
+
+
+
+# service: serverless-sc
+# frameworkVersion: "3"
+
+# plugins:
+#   - serverless-sync-s3buckets
+
+# resources:
+#   Resources:
+#     SmoothOperators:
+#       Type: AWS::S3::Bucket
+#       DeletionPolicy: Delete
+#       Properties:
+#         BucketName: serverless-smooth-operators-shivam
+#         WebsiteConfiguration:
+#           IndexDocument: index.html
+#           ErrorDocument: index.html
+#         OwnershipControls:
+#           Rules:
+#             - ObjectOwnership: ObjectWriter
+#         PublicAccessBlockConfiguration:
+#           BlockPublicAcls: false
+#           BlockPublicPolicy: false
+#           IgnorePublicAcls: false
+#           RestrictPublicBuckets: false
+
+#     SmoothOperatorsBucketPolicy:
+#       Type: AWS::S3::BucketPolicy
+#       Properties:
+#         Bucket:
+#           Ref: SmoothOperators
+#         PolicyDocument:
+#           Statement:
+#             - Sid: PublicReadGetObject
+#               Effect: Allow
+#               Principal: "*"
+#               Action:
+#                 - s3:GetObject
+#               Resource:
+#                 Fn::Join:
+#                   ["", ["arn:aws:s3:::", { "Ref": SmoothOperators }, "/*"]]
+
+#     CloudFrontDistribution:
+#       Type: AWS::CloudFront::Distribution
+#       Properties:
+#         DistributionConfig:
+#           Origins:
+#             - Id: SmoothOperatorsOrigin
+#               DomainName:
+#                 { "Fn::GetAtt": ["SmoothOperators", "RegionalDomainName"] }
+#               S3OriginConfig:
+#                 OriginAccessIdentity: ""
+#           Enabled: "true"
+#           DefaultRootObject: index.html
+#           CustomErrorResponses:
+#             - ErrorCode: 404
+#               ResponseCode: 200
+#               ResponsePagePath: /index.html
+#           DefaultCacheBehavior:
+#             AllowedMethods:
+#               - DELETE
+#               - GET
+#               - HEAD
+#               - OPTIONS
+#               - PATCH
+#               - POST
+#               - PUT
+#             TargetOriginId: SmoothOperatorsOrigin
+#             ForwardedValues:
+#               QueryString: "false"
+#               Cookies:
+#                 Forward: none
+#             ViewerProtocolPolicy: redirect-to-https
+#           ViewerCertificate:
+#             CloudFrontDefaultCertificate: "true"
+
+#   Outputs:
+#     SmoothOperatorsBucketName:
+#       Value: { "Ref": "SmoothOperators" }
+#     SmoothOperatorsSiteURL:
+#       Value: { "Fn::GetAtt": ["CloudFrontDistribution", "DomainName"] }
+
+# custom:
+#   syncS3Buckets:
+#     - bucketRef: SmoothOperators
+#       localDir: dist/final-ui

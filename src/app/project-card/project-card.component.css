@@ -1,0 +1,718 @@
+/* .accordion {
+    background-color: white;
+    padding: 4px 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px rgb(255, 205, 255);
+    cursor: pointer;
+    width: 1000px;
+ 
+  }
+  question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .icon {
+    margin-right: 16px;
+    transition: transform 0.2s;
+  }
+  
+  .icon.active {
+    transform: rotate(-180deg);
+  }
+  
+  .answer {
+    color: #666;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s;
+  }
+   */
+
+
+   /* .accordion {
+    background-color: white;
+    padding: 4px 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px rgb(255, 205, 255);
+    cursor: pointer;
+    width: 1000px;
+ 
+  }
+  .question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .icon {
+    margin-right: 16px;
+    transition: transform 0.2s;
+  }
+  
+  .icon.active {
+    transform: rotate(-180deg);
+  }
+  
+  .answer {
+    color: #666;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s;
+    column-count: 2;
+  }
+
+  .card{
+    div {
+      column-count: 2;
+      column-gap: 40px;
+      column-rule-style: solid;
+      column-rule-width: 1px;
+    }
+  } */
+
+
+
+
+/* 
+  .table{
+    margin: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    size: 500px;
+  
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  } */
+
+  /* .accordion {
+      background-color: white;
+      padding: 4px 16px;
+      margin-bottom: 16px;
+      border-radius: 4px;
+      box-shadow: 1px 1px 5px rgb(255, 205, 255);
+      cursor: pointer;
+      width: 1000px;
+   
+    }
+    .question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .icon {
+      margin-right: 16px;
+      transition: transform 0.2s;
+    }
+    
+    .icon.active {
+      transform: rotate(-180deg);
+    }
+    
+    .answer {
+      color: #666;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s;
+    }
+     */
+  
+  
+     /* .accordion {
+      background-color: white;
+      padding: 4px 16px;
+      margin-bottom: 16px;
+      border-radius: 4px;
+      box-shadow: 1px 1px 5px rgb(255, 205, 255);
+      cursor: pointer;
+      width: 1000px;
+   
+    }
+    .question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .icon {
+      margin-right: 16px;
+      transition: transform 0.2s;
+    }
+    
+    .icon.active {
+      transform: rotate(-180deg);
+    }
+    
+    .answer {
+      color: #666;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s;
+      column-count: 2;
+    }
+  
+  
+    .question{
+      column-count: 5;
+      column-gap: 40px;
+      column-rule-style: solid;
+      column-rule-width: 1px;
+      column-rule-color: black;
+    }
+    .card{
+      div {
+        column-count: 2;
+        column-gap: 40px;
+        column-rule-style: solid;
+        column-rule-width: 1px;
+      }
+    }  */
+
+
+
+    /* .table{
+      margin: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+        width: 210px;
+       height: 20px;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+    
+    tr:hover {
+      background-color: #f5f5f5;
+    } */
+    
+    
+    /* .accordion {
+        background-color: white;
+        padding: 4px 16px;
+        margin-bottom: 16px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 5px rgb(255, 205, 255);
+        cursor: pointer;
+        width: 1000px;
+     
+      }
+      .question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .icon {
+        margin-right: 16px;
+        transition: transform 0.2s;
+      }
+      
+      .icon.active {
+        transform: rotate(-180deg);
+      }
+      
+      .answer {
+        color: #666;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s;
+      }
+       */
+    
+    
+       /* .accordion {
+        background-color: white;
+        padding: 4px 16px;
+        margin-bottom: 16px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 5px rgb(255, 205, 255);
+        cursor: pointer;
+        width: 1000px;
+     
+      }
+      .question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .icon {
+        margin-right: 16px;
+        transition: transform 0.2s;
+      }
+      
+      .icon.active {
+        transform: rotate(-180deg);
+      }
+      
+      .answer {
+        color: #666;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s;
+        column-count: 2;
+      }
+    
+    
+      .question{
+        column-count: 5;
+        column-gap: 40px;
+        column-rule-style: solid;
+        column-rule-width: 1px;
+        column-rule-color: black;
+      }
+      .card{
+        div {
+          column-count: 2;
+          column-gap: 40px;
+          column-rule-style: solid;
+          column-rule-width: 1px;
+        }
+      } */
+    
+      
+      
+    
+    .table{
+      margin: 4px;
+      margin-left: -140px;
+      margin-top: 30px;
+      
+  
+    }
+    table {
+      width: 130%;
+      border-collapse: collapse;
+
+   
+    }
+    
+    th, td {
+      border: none;
+      padding: 8px;
+      text-align: center;
+        width: 210px;
+       height: 20px;
+       border-bottom: 1px solid #ddd;
+       
+       
+    }
+    td {
+      border-right: none; /* Remove vertical border for table data cells */
+    }
+    tr {
+      border: 1px solid #dddddd; /* Left and right borders for rows */
+      height:50px;
+      /* transition: height 0.2s ease-in-out; */
+    }
+
+    
+    th {
+      background-color: #b2bdcd;
+      
+    }
+    
+    tr:hover {
+      background-color: #ccd4e0;
+      /* transform: scale(1.02); */
+      height:65px;
+      font-weight:610;
+    }
+        
+    /* .answer {
+      display: none;
+    width: 500px;
+    height: 500px;
+    border-width: 20px;
+    padding-left: 25px;
+     position: fixed;
+    top: 50%;left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #c8c8c8 ;
+    border: 1px solid black;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); 
+
+    } */
+    .popup {
+      height:max-content;
+      width: 600px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 1px 8px 20px;
+  
+      /* display: none; */
+    }
+
+    
+    h4{
+      margin-top: 1px;
+      display:grid;
+      font-weight: normal;
+   
+    }
+    p{
+      /* margin-top: 150px; */
+      display: inline;
+      font-size:medium;
+      font-weight: lighter;
+    }
+    .popup-content {
+      margin-top: 10px;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* text-align: center; */
+      color: #030e37;
+      display: block;
+    }
+    
+    .popup button {
+      margin-top: 10px;
+    }
+    /* .accordion-item {
+      display: inline-block;
+      margin-right: 15px;
+      font-size:x-small;
+      font-style: normal;
+      font-family:inherit;
+    } */
+    
+   .usercard {
+        align-items: center;
+        background-color: white;
+        padding: 4px 16px;
+        margin-bottom: 16px;
+        border-radius: 4px;
+        /* box-shadow: 1px 1px 5px rgb(255, 205, 255); */
+        cursor: pointer;
+
+     
+      }
+       /* 
+      .question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .icon {
+        margin-right: 16px;
+        transition: transform 0.2s;
+      }
+      
+      .icon.active {
+        transform: rotate(-180deg);
+      }
+      
+      .answer {
+        color: #666;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s;
+      }
+       */
+    
+    
+       /* .accordion {
+        background-color: white;
+        padding: 4px 16px;
+        margin-bottom: 16px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 5px rgb(255, 205, 255);
+        cursor: pointer;
+        width: 1000px;
+     
+      }
+      .question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .icon {
+        margin-right: 16px;
+        transition: transform 0.2s;
+      }
+      
+      .icon.active {
+        transform: rotate(-180deg);
+      }
+  
+    
+      .question{
+        column-count: 5;
+        column-gap: 40px;
+        column-rule-style: solid;
+        column-rule-width: 1px;
+        column-rule-color: black;
+      }
+      .card{
+        div {
+          column-count: 2;
+          column-gap: 40px;
+          column-rule-style: solid;
+          column-rule-width: 1px;
+        }
+      } */
+    #pform {
+        display: none;
+        width: 30%; /* Adjust the width as needed */
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 1px 8px 20px;
+        position: fixed;
+        background-color: white;
+        z-index: 1000; 
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+  #pform label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+    }
+    
+  #pform input {
+        /* width: 100%; */
+        padding: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        outline: none;
+        border-radius: 10px;
+        color: black;
+    }
+    .dropbtn {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      padding: 10px;
+      font-size: 16px;
+      border: 0.8px solid #d5d5d5;
+      cursor: pointer;
+      
+    }
+    
+  #pform .bttn,
+  #pform .close {
+        width: calc(50% - 5px); 
+        box-sizing: border-box;
+        background-color: #4681f4; 
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        display: inline-block; 
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropbtn {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      padding: 10px;
+      font-size: 16px;
+      border: 0.8px solid #d5d5d5;
+      cursor: pointer;
+    }
+    
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+    header{
+      font-size: 1.5rem;
+      color: #333;
+  
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 10px;
+    
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-family:inherit;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    .dropdown:hover .dropbtn {
+      background-color: #c3e7ff;
+    }
+    
+    .sel{
+      /* display: none; */
+      color: black;
+    }
+    .accordion-item {
+      display: inline-block;
+      margin-right: 15px;
+      font-size:x-small;
+      font-style: normal;
+      font-family:inherit;
+    }
+  #pform .close {
+        background-color: #6C757D; /* Adjust the color as needed */
+        margin-left: 10px; 
+    }
+    
+    @media (max-width: 620px) {
+      #pform {
+            max-width: 100%;
+        }
+    
+      #pform button,
+      #pform .close {
+            width: 100%; 
+            margin-left: 0;
+        }
+    }
+    @media (max-width: 900px) {
+      .table{
+        margin:auto;
+        margin-top: 30px;
+        /* margin-left: 90px; */
+
+    
+      }
+      table {
+        width: 90%;
+        border-collapse: collapse;
+  
+      
+      }
+      .pagination{
+        margin-left: 10px;
+        margin-bottom: -43px;
+        margin-left: -30px;
+
+      }
+    }
+    @media (max-width: 768px) {
+     
+      .pagination{
+        margin-left: 10px;
+        margin-bottom: -43px;
+        margin-left: -80px;
+
+      }
+    }
+    @media (max-width: 1230px) {
+      .table{
+        margin:auto;
+        margin-top: 30px;
+        margin-left: 60px;
+
+    
+      }
+      table {
+        width: 90%;
+        border-collapse: collapse;
+  
+      
+      }
+    }
+    @media (max-width: 1400px) {
+      .table{
+        margin:auto;
+        margin-top: 30px;
+        margin-left: 60px;
+
+    
+      }
+      table {
+        width: 90%;
+        border-collapse: collapse;
+  
+      
+      }
+    }
+    
+/* Add this to your styles.css or component styles */
+.main-label {
+  display: block;
+  margin-bottom: 5px; /* Adjust as needed to maintain spacing */
+}
+
+.status-container {
+  display: flex;
+
+  /* align-items: left; */
+  margin-bottom: 5px;
+}
+
+.status-label {
+  width:25%;
+  margin-right: -10px; 
+  
+}
+
+/* ... Your existing CSS ... */
+
+
+.pagination{
+  /* padding: 20px 16px; */
+  /* font-size: 18px; */
+
+  position: fixed;
+    bottom: 1.2rem;
+    left: 6rem;
+  /* margin-top: 290px; */
+  /* margin-left: -200px; */
+}
+.pagination::ng-deep .ngx-pagination .current{
+  background: #000d3a;
+}
